@@ -1,1 +1,104 @@
-policy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Dual Subs for Netflix</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+    font: 400 17px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif;
+    color: #1d1d1f; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e8e8ea; background: #141416; } }
+  h1 { font-size: 1.7rem; margin: 0 0 .3rem; }
+  h2 { font-size: 1.15rem; margin: 2.2rem 0 .6rem; }
+  .date { color: #6e6e73; font-size: .9rem; margin: 0 0 2rem; }
+  @media (prefers-color-scheme: dark) { .date { color: #a0a0a8; } }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid #d8d8dc; vertical-align: top; }
+  @media (prefers-color-scheme: dark) { th, td { border-color: #34343a; } }
+  code { font: 400 .9em/1 ui-monospace, monospace; background: #f2f2f4; padding: .1em .35em; border-radius: 3px; }
+  @media (prefers-color-scheme: dark) { code { background: #26262b; } }
+  a { color: #0b6bcb; }
+  @media (prefers-color-scheme: dark) { a { color: #79b8ff; } }
+  ol > li { margin-bottom: 1.1rem; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6e6e73; }
+  @media (prefers-color-scheme: dark) { footer { color: #a0a0a8; } }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Dual Subs for Netflix</h1>
+<p class="date">Last updated: September 12, 2026</p>
+
+<p>Dual Subs for Netflix is a browser extension that shows two subtitle languages
+at the same time on Netflix. It has no account, no analytics, no advertising and
+no tracking, and it does not sell or share data.</p>
+
+<h2>What stays on your device</h2>
+<ul>
+  <li><strong>Your settings</strong> (languages, sizes, colours, shortcut behaviour),
+      saved in the browser's local storage for netflix.com.</li>
+  <li><strong>The interface language</strong> you choose, and — for interface languages
+      other than English and Spanish — the translated text of the extension's own labels,
+      saved in the extension's local storage so they are not translated again.</li>
+</ul>
+<p>You can erase all of it by removing the extension or with <em>Reset settings</em>
+in its panel.</p>
+
+<h2>What is sent over the network, and to whom</h2>
+<ol>
+  <li><strong>Netflix.</strong> Subtitle files are downloaded from Netflix's own servers,
+      the same files the Netflix player uses. To find them, the extension reads the subtitle
+      track list that Netflix's player already receives in the page. No other data is sent
+      to Netflix by the extension.</li>
+
+  <li><strong>Google, only when the remote translation engine is in use.</strong>
+      <strong>Machine translation is off until you turn it on.</strong> Once you do, the
+      plain text of the subtitle lines around the current playback position is sent to
+      Google's translation service (<code>translate.googleapis.com</code>), together with
+      the source and target language codes, so it can be translated. Nothing else is sent:
+      no account data, no viewing history, no title identifiers, no cookies. As with any
+      web request, Google receives your IP address.
+      <a href="https://policies.google.com/privacy">Google's privacy policy</a> applies to
+      that service.
+      <ul>
+        <li>In <strong>Chrome and Chromium-based browsers</strong>, translation runs
+            <strong>on your device</strong> with the browser's built-in Translator API, and
+            the subtitle text does not leave your computer. The browser may download a
+            language model from Google the first time. The remote engine is only used if
+            you select it.</li>
+        <li>In <strong>Firefox</strong>, which has no on-device translation, the remote
+            engine is the only one available and comes preselected.</li>
+      </ul></li>
+
+  <li><strong>Interface translation.</strong> When you pick an interface language other
+      than English or Spanish, the extension's own interface labels — not any of your
+      data — are translated once, on your device when possible, otherwise through the same
+      Google service.</li>
+</ol>
+
+<h2>The donation link</h2>
+<p>The popup contains a link to Buy Me a Coffee. Nothing is sent when the popup is open;
+the link only opens that site in a new tab if you click it, and from then on that site's
+own privacy policy applies. The extension does not know whether you donated, and donating
+unlocks nothing.</p>
+
+<h2>Permissions</h2>
+<table>
+  <tr><th>Permission</th><th>Why</th></tr>
+  <tr><td><code>storage</code></td><td>Save your settings and the interface language.</td></tr>
+  <tr><td><code>https://www.netflix.com/*</code></td><td>Show the subtitles in the Netflix player and read its list of subtitle tracks.</td></tr>
+  <tr><td><code>https://translate.googleapis.com/*</code></td><td>Send subtitle text for translation when the remote engine is used.</td></tr>
+</table>
+
+<h2>Contact</h2>
+<p>Questions about this policy: <a href="mailto:thefantas@gmail.com">thefantas@gmail.com</a></p>
+
+<footer>Dual Subs for Netflix is not affiliated with, endorsed by or sponsored by
+Netflix or Google.</footer>
+
+</body>
+</html>
