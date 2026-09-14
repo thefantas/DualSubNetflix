@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Media Grabber</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    max-width: 44rem; margin: 0 auto; padding: 2.5rem 1.25rem 4rem;
+    font: 400 17px/1.6 -apple-system, "Segoe UI", system-ui, sans-serif;
+    color: #1d1d1f; background: #fff;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #e8e8ea; background: #141416; } }
+  h1 { font-size: 1.7rem; margin: 0 0 .3rem; }
+  h2 { font-size: 1.15rem; margin: 2.2rem 0 .6rem; }
+  .date { color: #6e6e73; font-size: .9rem; margin: 0 0 2rem; }
+  @media (prefers-color-scheme: dark) { .date { color: #a0a0a8; } }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid #d8d8dc; vertical-align: top; }
+  @media (prefers-color-scheme: dark) { th, td { border-color: #34343a; } }
+  code { font: 400 .9em/1 ui-monospace, monospace; background: #f2f2f4; padding: .1em .35em; border-radius: 3px; }
+  @media (prefers-color-scheme: dark) { code { background: #26262b; } }
+  a { color: #0b6bcb; }
+  @media (prefers-color-scheme: dark) { a { color: #79b8ff; } }
+  ol > li { margin-bottom: 1.1rem; }
+  footer { margin-top: 3rem; font-size: .9rem; color: #6e6e73; }
+  @media (prefers-color-scheme: dark) { footer { color: #a0a0a8; } }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Media Grabber</h1>
+<p class="date">Last updated: September 14, 2026</p>
+
+<p>Media Grabber is a browser extension that finds the video a page is playing
+and saves it as a file. It has no account, no analytics, no advertising and no
+tracking, it has no server of its own, and it does not sell or share data.</p>
+
+<h2>What stays on your device</h2>
+
+<table>
+  <tr>
+    <th>What</th><th>Where it is kept</th><th>Until when</th>
+  </tr>
+  <tr>
+    <td>The list of media found on a tab: the media address, the page title and
+        thumbnail, and the headers the page itself sent for that request —
+        which is what lets the file be fetched again.</td>
+    <td>The browser's <em>session</em> storage for the extension.</td>
+    <td>Deleted when the tab navigates away or closes, and the whole store is
+        gone when the browser quits.</td>
+  </tr>
+  <tr>
+    <td>Partly-assembled downloads, and the few seconds of video used for a
+        card's moving preview.</td>
+    <td>The browser's private filesystem (<code>OPFS</code>), readable by no
+        website.</td>
+    <td>Deleted once the finished file has been saved.</td>
+  </tr>
+  <tr>
+    <td>Your settings: interface language, preferred quality and container,
+        whether previews are shown, download folder.</td>
+    <td>The extension's own local storage.</td>
+    <td>Until you change them or remove the extension.</td>
+  </tr>
+</table>
+
+<h2>What is sent over the network, and to whom</h2>
+
+<p><strong>Only the site you are already on.</strong> The extension reads a
+playlist to see what is in it, and fetches the media itself when you ask it to
+download. Those requests go to the same servers the page was already using, and
+carry the headers the page itself sent. Nothing is sent anywhere else.</p>
+
+<p>There is no server belonging to this extension, so there is nowhere for your
+data to be sent even in principle. Nothing about you, about the pages you visit
+or about what you download leaves your computer.</p>
+
+<h2>Permissions, and why each one exists</h2>
+
+<table>
+  <tr><th>Permission</th><th>Why</th></tr>
+  <tr>
+    <td>Access to all sites</td>
+    <td>Video lives on any site, and its pieces routinely come from a CDN on a
+        different domain than the page. A narrower list would work on no site
+        at all. Pages are only observed; no script of the extension's runs on
+        the pages you visit, with one exception noted below.</td>
+  </tr>
+  <tr>
+    <td><code>webRequest</code></td>
+    <td>To notice that a page fetched a playlist or a media file. Read-only:
+        Manifest V3 removed the ability to alter requests, so nothing is or can
+        be changed in flight.</td>
+  </tr>
+  <tr>
+    <td><code>declarativeNetRequest</code></td>
+    <td>A download must carry the same <code>Cookie</code>,
+        <code>Referer</code> and <code>Origin</code> the page sent, or the CDN
+        refuses it — and a normal <code>fetch()</code> is not allowed to set
+        them. Rules are added for the one address about to be fetched and
+        removed immediately afterwards.</td>
+  </tr>
+  <tr>
+    <td><code>downloads</code>, <code>storage</code>,
+        <code>unlimitedStorage</code></td>
+    <td>To save the finished file, remember your settings, and hold a large
+        download while it assembles.</td>
+  </tr>
+  <tr>
+    <td><code>tabs</code>, <code>scripting</code></td>
+    <td>To know which tab the panel is about, and to read that page's title and
+        poster when you open the panel. The recording feature installs hooks on
+        the single tab being recorded, only while it is recording.</td>
+  </tr>
+  <tr>
+    <td><code>notifications</code></td>
+    <td>To say when a download has finished or failed.</td>
+  </tr>
+</table>
+
+<p>The one exception to "no script on the pages you visit" is YouTube, which
+has a script of its own because its player cannot be read any other way. It
+reports what the player already knows about the video to the extension, and
+nowhere else.</p>
+
+<h2>Protected video</h2>
+
+<p>Video protected by DRM — Widevine, PlayReady, FairPlay — is detected and
+refused. The extension has no means of decrypting it and does not attempt to.
+Services such as Netflix, Disney+ and Prime Video are reported as protected and
+left alone.</p>
+
+<h2>Remote code</h2>
+
+<p>There is none. Everything the extension runs is included in the package you
+install, built from source before submission. Nothing is fetched and executed
+at runtime.</p>
+
+<h2>Changes</h2>
+
+<p>If this policy changes, the date at the top changes with it. Any change that
+altered what is collected — there being nothing collected today — would be
+described here before it took effect.</p>
+
+<footer>
+Media Grabber is free software under the MIT licence.
+</footer>
+
+</body>
+</html>
