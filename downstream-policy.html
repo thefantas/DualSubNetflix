@@ -20,6 +20,7 @@
   th, td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid #d8d8dc; vertical-align: top; }
   @media (prefers-color-scheme: dark) { th, td { border-color: #34343a; } }
   code { font: 400 .9em/1 ui-monospace, monospace; background: #f2f2f4; padding: .1em .35em; border-radius: 3px; }
+  .muted { color: #6a6a72; font-size: .85em; }
   @media (prefers-color-scheme: dark) { code { background: #26262b; } }
   a { color: #0b6bcb; }
   @media (prefers-color-scheme: dark) { a { color: #79b8ff; } }
@@ -31,7 +32,7 @@
 <body>
 
 <h1>Privacy Policy — Downstream</h1>
-<p class="date">Last updated: September 14, 2026</p>
+<p class="date">Last updated: September 18, 2026</p>
 
 <p>Downstream is a browser extension that finds the video a page is playing
 and saves it as a file. It has no account, no analytics, no advertising and no
@@ -107,6 +108,14 @@ or about what you download leaves your computer.</p>
         <code>unlimitedStorage</code></td>
     <td>To save the finished file, remember your settings, and hold a large
         download while it assembles.</td>
+  </tr>
+  <tr>
+    <td><code>offscreen</code> <span class="muted">(Chrome only)</span></td>
+    <td>A Manifest&nbsp;V3 service worker cannot start a Worker, and joining the
+        pieces of a video into one file has to happen off the main thread. This
+        permission opens a hidden document, belonging to the extension, that
+        holds that Worker. It loads no page of yours and reaches no site.
+        Firefox needs no equivalent and its build does not ask for it.</td>
   </tr>
   <tr>
     <td><code>tabs</code>, <code>scripting</code></td>
